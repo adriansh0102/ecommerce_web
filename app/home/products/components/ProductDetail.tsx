@@ -3,10 +3,11 @@
 import { useProducts } from "@/hooks";
 
 
-export const ProductDetailComponent = () => {
+export const ProductDetailComponent = ({ params }: { params: { id: string } }) => {
 
   const { products , isLoading , isError } = useProducts(`/users`);
   
+
   
 
   // return <div>  --{data.data.username}</div>

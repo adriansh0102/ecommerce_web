@@ -1,8 +1,7 @@
-import CategoryComponent from "./components/Category";
 
-export default function CategoryPage() {
+export default function ProductDetailPage() {
 
     return (
-        <CategoryComponent/>
+        <h1>hola</h1>
     );
 }

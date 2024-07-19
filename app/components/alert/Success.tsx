@@ -19,26 +19,22 @@ export default function SuccessAlert() {
     return (
         <>
             <CAlert
+                className="rounded-none border-l-4 border-[#2ec946] bg-[#2ec946]/10 font-medium text-[#2ec946]"
                 style={{
+                    display: 'flex',
+                    textAlign: 'center',
+                    justifyContent: 'center',
                     width: '350px',
-                    height: 'auto',
                     position: 'fixed',
                     top: '10px',
                     right: '10px',
                     zIndex: 1000,
-                    backgroundColor: 'rgb(3, 177, 75 , 0.5)',
-                    padding: '12px',
-                    borderRadius: '5px',
-                    display: 'flex',
-                    textAlign: 'center',
-                    justifyContent: 'center',
-                    gap: '10px',
-                    transition: 'all 0.6s ',
                 }}
                 color="primary" dismissible visible={visible} >
                 <CButton
                     style={{
                         color: 'rgb(3, 177, 75)',
+                        marginLeft: '10px',
                     }}
                     onClick={() => {
                         setVisible(false)
@@ -46,12 +42,15 @@ export default function SuccessAlert() {
                     <IconCircleDashedCheck />
                 </CButton>
 
-                <p>A simple primary alaesjg fdhjkl etyu';lkjhgfdsa ert—check it out!</p>
+                <p
+                    style={{
+                        padding: '10px',
+                    }}
+                >Product asfawsdgearsdgdf dfhdf sdfdfd hsd hfdsh ds htedCreate
+                </p>
                 <CButton
                     style={{
-                        marginLeft: 'auto',
-                        marginRight: '0px',
-                        padding: '0 5px',
+                        marginRight: '10px',
                         color: 'rgb(238, 107, 107)',
                         backgroundColor: 'transparent',
                         borderRadius: '5px',

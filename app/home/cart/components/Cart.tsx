@@ -21,7 +21,7 @@ export default function CartComponent() {
                     </div>
                     <button className="bg-destructive text-destructive-foreground px-3 py-1 rounded-md ml-4">Remove</button>
                 </div>
-                
+
                 <div className="bg-card text-card-foreground p-4 rounded-lg flex items-center mb-4">
                     <img src="https://placehold.co/100" alt="Product Image" className="w-16 h-16 object-cover rounded-lg mr-4" />
                     <div className="flex-1">
@@ -50,7 +50,7 @@ export default function CartComponent() {
                     </div>
                     <button className="bg-destructive text-destructive-foreground px-3 py-1 rounded-md ml-4">Remove</button>
                 </div>
-                
+
                 <hr />
                 <div className="bg-card text-card-foreground p-4 rounded-lg flex justify-between items-center ">
                     <p className="text-lg">Total:</p>
@@ -58,7 +58,15 @@ export default function CartComponent() {
 
                 </div>
                 <button className="btn-primary text-primary-foreground w-full py-2 mt-4 rounded-lg hover:bg-primary/80">Proceed to Checkout</button>
-                
+                <div
+                style={{
+                    color: 'rgba(0, 214, 89, 1)'
+                }}
+                className="hidden lg:flex lg:flex-1 lg:justify-center mt-4">
+                    <a href={'/auth/login'} className="text-sm font-semibold leading-6 text-green-500">
+                        Log in <span aria-hidden="true">&rarr;</span>
+                    </a>
+                </div>
             </div>
         </div>
     )
