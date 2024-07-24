@@ -5,7 +5,6 @@ import { Loader } from "@/app/components/ui";
 import { useGetIdProduct, useProducts } from "@/hooks";
 import { IconShoppingCartPlus } from "@tabler/icons-react";
 import { useState } from "react";
-import { useRouter } from 'next/navigation'
 
 import CookiesParse from "cookie-parser";
 
@@ -21,13 +20,10 @@ export const ProductDetailComponent = ({ params }: { params: { id: string } }) =
  
  
 
-  const router = useRouter()
  
   return (
   <>
-    <button type="button" onClick={() => router.push('/dashboard')}>
-      Dashboard
-    </button>
+
    { isLoading
       ? <Loader />
       : <div className="p-4 md:p-4 bg-background">
