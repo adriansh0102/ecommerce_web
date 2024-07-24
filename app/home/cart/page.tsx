@@ -6,7 +6,7 @@ export default function CartPage() {
 
     return (
 
-        <ExampleCart/>
+        <CartComponent/>
 
     );
 }

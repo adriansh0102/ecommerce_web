@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 
+.probando {
+    background-color: rgb(235, 0, 0);
+
+}
+
 .btn-primary{
     background-color: rgba(0, 214, 89, 1);
 }

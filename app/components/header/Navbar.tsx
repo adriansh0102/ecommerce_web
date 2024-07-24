@@ -23,18 +23,22 @@ import {
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 import { IconSearch } from '@tabler/icons-react'
+import ExampleCart from '@/app/home/cart/components/cart222'
+import { useCategoryMenu } from '@/hooks/useCategorys'
 
 const products = [
-  { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#', icon: ChartPieIcon },
-  { name: 'Engagement', description: 'Speak directly to your customers', href: '#', icon: CursorArrowRaysIcon },
-  { name: 'Security', description: 'Your customers’ data will be safe and secure', href: '#', icon: FingerPrintIcon },
-  { name: 'Integrations', description: 'Connect with third-party tools', href: '#', icon: SquaresPlusIcon },
-  { name: 'Automations', description: 'Build strategic funnels that will convert', href: '#', icon: ArrowPathIcon },
+  { name: 'Analytics', description: 'Get a better understanding of your traffic', href: '#'},
+  { name: 'Engagement', description: 'Speak directly to your customers', href: '#' },
+  { name: 'Security', description: 'Your customers’ data will be safe and secure', href: '#' },
+  { name: 'Integrations', description: 'Connect with third-party tools', href: '#' },
+  { name : 'Otros' , description: 'Explora todas las categorias' , href: '#'}
 ]
 
 
 export default function Navbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const {categorys, isLoading, isError} = useCategoryMenu('category')
 
   return (
     <header className="navbar">
@@ -72,9 +76,7 @@ export default function Navbar() {
                     key={item.name}
                     className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
                   >
-                    <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                      <item.icon aria-hidden="true" className="h-6 w-6 text-gray-600 group-hover:text-indigo-600" />
-                    </div>
+                    
                     <div className="flex-auto">
                       <a href={item.href} className="block font-semibold text-gray-900">
                         {item.name}
@@ -101,7 +103,8 @@ export default function Navbar() {
           <a href={'/home/products'} className="text-sm font-semibold leading-6 text-gray-900 pt-4">
             Products
           </a>
-          <a href={'/home/cart'} className="text-sm font-semibold leading-6 text-gray-900 pt-4">
+          <a href={'/home/cart'}
+          className="text-sm font-semibold leading-6 text-gray-900 pt-4">
             Cart
           </a>
           <a href="#" className="text-sm font-semibold leading-6 text-gray-900 pt-4">

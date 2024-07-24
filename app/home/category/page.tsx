@@ -1,7 +1,8 @@
+import CategoryComponent from "./components/Category";
 
 export default function ProductDetailPage() {
 
     return (
-        <h1>hola</h1>
+        <CategoryComponent />
     );
 }
