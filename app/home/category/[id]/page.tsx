@@ -1,13 +1,15 @@
 
 
 import CategoryComponent from "../../category/components/Category"
+import { ProductsCategoryComponent } from "../components/ProductsIdCategory"
 
 
 
-export default function CategoryPage() {
+export default function CategoryIdProductsPage({ params }: { params: { id: string } }) {
 
   return (
-    <CategoryComponent/>
+    <ProductsCategoryComponent params={{
+      id: params.id
+    }} />
   )
 }
-

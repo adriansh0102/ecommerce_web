@@ -1,8 +1,10 @@
-
-import { FC } from "react";
+'use client'
+import { FC, useContext } from "react";
 import Navbar from "../components/header/Navbar";
 import type { Metadata } from "next";
-
+import { CartProvider } from "./cart/providers/CartProvider";
+import { AuthProvider } from "@/app/api/auth/providers/authProvider";
+import { SessionProvider } from "next-auth/react";
 
 
 interface Props {
@@ -12,19 +14,16 @@ interface Props {
     imageFullUrl?: string;
 }
 
-export const metadata: Metadata = {
-    title: "Ecommerce",
-    description: "Sale of products",
-  };
+
 
 export const HomeLayout: FC<Props> = ({ children, title, pageDescription, imageFullUrl }) => {
 
-    metadata.title = title
-    metadata.description = pageDescription
-
+  
     return (
-        <>
-            {/* <Head>
+<SessionProvider>
+        <AuthProvider>
+            <CartProvider>
+                {/* <Head>
                 <title>{title}</title>
                 <meta name="description" content={pageDescription} />
                 <meta name="og:title" content={title} />
@@ -37,19 +36,21 @@ export const HomeLayout: FC<Props> = ({ children, title, pageDescription, imageF
                 }
             </Head> */}
 
-            <nav>
-                <Navbar />
-            </nav>
+                <nav>
+                    <Navbar />
+                </nav>
 
 
-            <main style={{
-                margin: "8px auto",
-                maxWidth: "1440px",
-                padding: "0 30px"
-            }}>
-                {children}  
-            </main>
-        </>
+                <main style={{
+                    margin: "8px auto",
+                    maxWidth: "1440px",
+                    padding: "0 30px"
+                }}>
+                    {children}
+                </main>
+            </CartProvider>
+        </AuthProvider>
+        </SessionProvider>
     )
 }
 

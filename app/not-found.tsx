@@ -13,7 +13,7 @@ export default function NotFound() {
         style={{
           marginTop: "20px",
         }}
-        href={`/admin?name=test&apellido=testApellido2222`} passHref prefetch={false}>
+        href={`/home/products`} passHref prefetch={false}>
         <button
           type="button"
           className="font-medium text-green-500 hover:text-green-600"

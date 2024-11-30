@@ -1,5 +1,6 @@
 
 
 export const environment = {
-  localUrl: "http://localhost:8080/api/"
+  baseUrl: "http://localhost:8080/api",
+  tax: 0.15
 };

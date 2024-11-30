@@ -6,7 +6,7 @@ import { Product } from "@/app/home/products/interfaces/product.interface";
 export interface ResultProductsGetAll {
     products: {
         message: string;
-        stutus: number;
+        status: number;
         success: boolean
         data: Product[];
     }
@@ -17,7 +17,7 @@ export interface ResultProductsGetAll {
 export interface ResultProductGetId {
     product: {
         message: string;
-        stutus: number;
+        status: number;
         success: boolean
         data: Product;
     }
@@ -28,9 +28,20 @@ export interface ResultProductGetId {
 export interface ResultCategoryGetAllMenu {
     categorys: {
         message: string;
-        stutus: number;
+        status: number;
         success: boolean
-        data: Category;
+        data: Category[];
+    }
+    isLoading: boolean;
+    isError: any;
+}
+
+export interface ResultCategoryGetAll {
+    categorys: {
+        message: string;
+        status: number;
+        success: boolean
+        data: Category[];
     }
     isLoading: boolean;
     isError: any;
